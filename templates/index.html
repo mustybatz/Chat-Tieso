@@ -1,0 +1,45 @@
+{% from 'form_helper.html' import displayField %}
+{% extends "prelogin-layout.html" %}
+
+{% block title %}Registrarse {% endblock title%}
+
+{% block content %}
+<form action="{{ url_for('index') }}", method="POST" class="hero is-primary is-bold is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-white">Registrate ahora!</h3>
+                <hr class="login-hr">
+                <p class="subtitle has-text-white">Por favor registrate para proceder.</p>
+                <div class="box">
+                    <form>
+                        <div class="field">
+                            <div class="control">
+                                {{ displayField(form.username, 'Nickname', autocomplete="off", autofocus=true) }}
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                {{ displayField(form.password, 'Contraseña') }}
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                {{ displayField(form.confirm_pswd, 'Reescribe la contraseña') }}
+                            </div>
+                        </div>
+                        <input class="button is-block is-info is-large is-fullwidth" type="submit" > <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                        <a href="login">Ya estás registrado? inicia sesión.</a>
+                        {{ form.csrf_token }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

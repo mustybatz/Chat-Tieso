@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav></nav>
+
+    <div id="main-section" style="margin-top: 10rem !important;">
+        <div class="card-group">
+            <div class="container ">
+                <div class="row">
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="col-sm ">
+
+                            <!--Selección de salas-->
+                            <nav id="sidebar">
+
+                                <!-- Card image -->
+                                <div class="text-center">
+                                    <img class="card-img-top rounded"
+                                        src="https://miro.medium.com/max/1120/1*33xhH9SsE0BtJ5cqxSNrBw.png"
+                                        alt="Card image cap" style="width: 500px !important;">
+                                </div>
+                                <!-- Card content -->
+                                <div class="card-body">
+                                    <!-- Title -->
+                                    <h4 class="card-title">Salas</h4>
+                                    <!-- Text -->
+                                    {% for room in rooms %}
+                                    <p class="select-room"><a>{{ room|title }}</a></p>
+                                    {% endfor %}
+                                    <!-- Button -->
+                                </div>
+                        </div>
+                        <!-- Card -->
+                        </nav>
+                    </div>
+                    <div class="card col-lg" style="padding: 0 !important;">
+                        <div class=" ">
+                            <!--Area de mensajes.-->
+
+                            <div id="rightside-panel">
+                                <div id="Layer1" style="width:100%; height:332px; overflow-y:scroll ">
+
+                                    <div id="display-message-section"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer" style="    background-color: #c5cae9;">
+                            <!-- Input message -->
+                            <div id="input-area">
+                                    <!-- Grid row -->
+                                    <div class="row">
+                                        <!-- Grid column -->
+                                        <div class="col-9">
+                                            <div class="md-form">
+                                                <input type="text" id="user_message" autocomplete="off" autofocus
+                                                    class="form-control" />
+                                                <label for="user_message">TiesoChat</label>
+
+                                            </div>
+                                        </div>
+                                        <div class="col md-form">
+                                            <button type="button" id="send_message"
+                                                class="btn btn-primary btn-md">Enviar</button>
+
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const username = `{{ username }}`;
+    </script>
+    <!--Custom chat JS-->
+    <script src="{{ url_for('static', filename='scripts/chat_page.js') }}"></script>
+    <!--Socketio-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+        integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <!--Js-->
+    <script src="{{ url_for('static', filename='scripts/socketio.js') }}"></script>
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+</body>
+
+</html>
