@@ -14,16 +14,18 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="indigo accent-1">
     <!--Navigation bar-->
-    <nav></nav>
+    <nav class="navbar navbar-light  indigo accent-4 fixed-top scrolling-navbar">
+        <span class="navbar-brand font-weight-bold deep-orange-lighter-hover">TiesoChat</span>
+    </nav>
 
-    <div id="main-section" style="margin-top: 10rem !important;">
+    <div id="main-section" style="margin-top: 6rem !important; margin-bottom: 2rem !important;">
         <div class="card-group">
             <div class="container ">
                 <div class="row">
                     <!-- Card -->
-                    <div class="card">
+                    <div class="card indigo lighten-5" style="border-radius: .25rem 0 0 .25rem !important;">
                         <div class="col-sm ">
 
                             <!--Selección de salas-->
@@ -31,12 +33,12 @@
 
                                 <!-- Card image -->
                                 <div class="text-center">
-                                    <img class="card-img-top rounded"
+                                    <img class="card-img-top rounded mt-4"
                                         src="https://miro.medium.com/max/1120/1*33xhH9SsE0BtJ5cqxSNrBw.png"
                                         alt="Card image cap" style="width: 500px !important;">
                                 </div>
                                 <!-- Card content -->
-                                <div class="card-body">
+                                <div class="card-body ">
                                     <!-- Title -->
                                     <h4 class="card-title">Salas</h4>
                                     <!-- Text -->
@@ -49,8 +51,8 @@
                         <!-- Card -->
                         </nav>
                     </div>
-                    <div class="card col-lg" style="padding: 0 !important;">
-                        <div class=" ">
+                    <div class="card col-lg" style="padding: 0 !important;border-radius: 0 .25rem 0 .25rem !important;">
+                        <div class="indigo lighten-5 ">
                             <!--Area de mensajes.-->
 
                             <div id="rightside-panel">
@@ -63,23 +65,23 @@
                         <div class="card-footer" style="    background-color: #c5cae9;">
                             <!-- Input message -->
                             <div id="input-area">
-                                    <!-- Grid row -->
-                                    <div class="row">
-                                        <!-- Grid column -->
-                                        <div class="col-9">
-                                            <div class="md-form">
-                                                <input type="text" id="user_message" autocomplete="off" autofocus
-                                                    class="form-control" />
-                                                <label for="user_message">TiesoChat</label>
-
-                                            </div>
-                                        </div>
-                                        <div class="col md-form">
-                                            <button type="button" id="send_message"
-                                                class="btn btn-primary btn-md">Enviar</button>
+                                <!-- Grid row -->
+                                <div class="row">
+                                    <!-- Grid column -->
+                                    <div class="col-9">
+                                        <div class="md-form">
+                                            <input type="text" id="user_message" autocomplete="off" autofocus
+                                                class="form-control" />
+                                            <label for="user_message">Escribe un mensaje aquí</label>
 
                                         </div>
                                     </div>
+                                    <div class="col md-form">
+                                        <button type="button" id="send_message"
+                                            class="btn btn-indigo btn-md">Enviar</button>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -89,6 +91,7 @@
     </div>
 
     <script type="text/javascript">
+
         const username = `{{ username }}`;
     </script>
     <!--Custom chat JS-->
@@ -111,5 +114,62 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 </body>
+<!-- Footer -->
+<script>
+    // Tooltips Initialization
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<footer class="page-footer font-small  indigo accent-4">
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!-- Grid row-->
+        <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-12 py-5">
+                <div class="mb-5 flex-center">
+                    <!-- Python -->
+                    <a class="py-ic">
+                        <i class="fab fa-python fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                    </a>
+                    <!-- Github -->
+                    <a class="git-ic" href="https://github.com/mustybatz" target="_blank">
+                        <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x" ></i>
+                    </a>
+                    <!-- Facebook +-->
+                    <a class="fb-ic" href="https://www.facebook.com/edyyalberto" target="_blank">
+                        <i class="fab fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                    </a>
+                    <!-- Github -->
+                    <a class="git-ic" href="https://github.com/Molisawa" target="_blank">
+                        <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                    </a>
+                    <!-- Python -->
+                    <a class="py-ic">
+                        <i class="fab fa-python fa-lg white-text mr-md-5 mr-3 fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row-->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://github.com/mustybatz/Chat-Tieso" data-toggle="tooltip" title="Benjamin, Barush y Edson"
+            target="_blank">Project done in collaboration</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 </html>
